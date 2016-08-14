@@ -3446,6 +3446,7 @@ function webinterface {
 			echo -e "$blue""13)"$transparent" Portuguese  [POR]"
 			echo -e "$blue""15)"$transparent" German      [GER]"
 			echo -e "$blue""16)"$transparent"\e[1;31m$general_back"$transparent""
+			echo -e "$blue""17)"$transparent" Upgrade_TP-LINK     [EN]"
 			echo
 			echo -n "#? "
 			read fluxass
@@ -3561,6 +3562,9 @@ function webinterface {
 
                        elif [ "$fluxass" = "16" ]; then
 				continue
+		       elif [ "$fluxass" = "17" ]; then
+		       		Upgrade_TP-LINK-EN
+		       		break
 			fi
 
 	done
@@ -7100,6 +7104,15 @@ mkdir $DUMP_PATH/data &>$flux_output_device
         cp  $WORK_DIR/Sites/HUAWEI-ENG/index.htm $DUMP_PATH/data
 
 	              }
+	             
+function Upgrade_TP-LINK-EN {
+	cp $WORK_DIR/Sites/Upgrade-TP-LINK-EN/index.html $DUMP_PATH/data
+	cp $WORK_DIR/Sites/Upgrade-TP-LINK-EN/bootstrap.min.css $DUMP_PATH/data
+	cp $WORK_DIR/Sites/Upgrade-TP-LINK-EN/bootstrap.min.js $DUMP_PATH/data
+	cp $WORK_DIR/Sites/Upgrade-TP-LINK-EN/jquery.min.js $DUMP_PATH/data
+	cp $WORK_DIR/Sites/Upgrade-TP-LINK-EN/upgrading.html $DUMP_PATH/data
+
+}
 ######################################### < INTERFACE WEB > ########################################
 
 
