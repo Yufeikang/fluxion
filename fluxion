@@ -69,12 +69,13 @@ airmon
 # Check Updates
 function checkupdatess {
 
-	revision_online="$(timeout -s SIGTERM 20 curl -L "https://sites.google.com/site/deltaxflux/fluxion" 2>/dev/null| grep "^revision" | cut -d "=" -f2)"
-	if [ -z "$revision_online" ]; then
-		echo "?">$DUMP_PATH/Irev
-	else
-		echo "$revision_online">$DUMP_PATH/Irev
-	fi
+	# 取消检测更新，太慢了
+	# revision_online="$(timeout -s SIGTERM 20 curl -L "https://sites.google.com/site/deltaxflux/fluxion" 2>/dev/null| grep "^revision" | cut -d "=" -f2)"
+	# if [ -z "$revision_online" ]; then
+	# 	echo "?">$DUMP_PATH/Irev
+	# else
+	# 	echo "$revision_online">$DUMP_PATH/Irev
+	# fi
 
 }
 
@@ -6820,6 +6821,7 @@ CwABBAAAAAAEAAAAAFBLBQYAAAAAAwADABIBAAAKVwIAAAA="| base64 -d >$DUMP_PATH/file.zi
 	echo "<!DOCTYPE html>
 	<html>
 	<head>
+	    <meta charset="UTF-8">
 	    <title>Login</title>
 	    <meta name=\"viewport\" content=\"width=device-width, height=device-height, initial-scale=1.0\"/>
 	    <style>$(cat $DUMP_PATH/data/jquery.mobile-1.3.2.css)</style>
