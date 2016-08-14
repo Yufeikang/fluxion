@@ -76,7 +76,7 @@ function checkupdatess {
 	# else
 	# 	echo "$revision_online">$DUMP_PATH/Irev
 	# fi
-	echo "$revision_online">“Skip”/Irev
+	echo "Skip">$DUMP_PATH/Irev
 
 }
 
